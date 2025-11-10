@@ -2,10 +2,18 @@ from user_accounts import users
 
 # Module contains functionality for app (Login, Deposit, Withdraw, View Balance)
 
+
 def login():
+    """
+    prompts user for username and password and validates credentials
+    Returns:
+        dict: Users data if login is successful
+        None: if Login fails
+    """
+    
     print("Welcome to Banking App!\n")
     username = input("Please enter your username: ").lower().rstrip().lstrip()
-    if username in users.keys():
+    if username in users:
         print("Username valid\n")
                 
         password = input("Please enter your password: ")
@@ -18,8 +26,15 @@ def login():
             
     else:
         print(f"Username: {username} not found!")
-            
-def main_menu(user_data):
+
+
+def user_dashboard(user_data):
+    """
+    If login successful and user_data is found then user_dashboard() will display
+    the available options within the banking app and prompt the user for 
+    their selection
+    """
+    
     print("""Please Select from the following:
           
             1) Display Balance
@@ -35,13 +50,16 @@ def main_menu(user_data):
             print("Logout Successful\n")
             exit()
         try:
-            user_choice = int(prompt)
-            if user_choice not in [1,2,3]:
+            selection = int(prompt)
+            if selection not in [1,2,3]:
                 print("Please select a Valid Choice.\n")
                 continue
         except Exception as e:
             print("Please select a Valid Choice.\n")
             continue
+        
+        if selection == 1:
+            pass
             
 
     
