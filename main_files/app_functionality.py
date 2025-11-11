@@ -61,6 +61,7 @@ def user_dashboard(user_data):
         
         if selection == 1:
             display_balance(user_data)
+            continue
             
 
     
