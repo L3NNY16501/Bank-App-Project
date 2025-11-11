@@ -4,16 +4,10 @@ from bank_account_functionality import display_balance
 # Module contains functionality for app (Login, Deposit, Withdraw, View Balance)
 
 
-def login():
-    """
-    prompts user for username and password and validates credentials
-    Returns:
-        dict: Users data if login is successful
-        None: if Login fails
-    """
-    
+def login() -> dict: 
     print("Welcome to Banking App!\n")
     username = input("Please enter your username: ").lower().strip()
+    
     if username in users:
         print("Username valid\n")
                 
