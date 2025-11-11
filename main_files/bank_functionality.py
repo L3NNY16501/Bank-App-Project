@@ -12,7 +12,7 @@ def login():
     """
     
     print("Welcome to Banking App!\n")
-    username = input("Please enter your username: ").lower().rstrip().lstrip()
+    username = input("Please enter your username: ").lower().strip()
     if username in users:
         print("Username valid\n")
                 
