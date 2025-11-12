@@ -1,7 +1,10 @@
 from json_file_handling import load_users, save_users
 
 def display_balance(user_data: dict) -> None:
-    balance = user_data["balance"]
+    username = user_data["username"]
+    users = load_users()
+    
+    balance = users[username]["balance"]
     print(f"Current balance: £{balance:,.2f}\n")
     
     

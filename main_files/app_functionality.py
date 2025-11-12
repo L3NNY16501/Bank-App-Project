@@ -1,13 +1,12 @@
 from json_file_handling import load_users, save_users
 from bank_account_functionality import display_balance, deposit, withdraw
-import json
 
 # Module contains functionality for app (Login, Deposit, Withdraw, View Balance)
 
 
 def login() -> dict: 
     try:
-            users = load_users()
+        users = load_users()
     except FileNotFoundError:
         print("Error: File not found!")
         return None    
