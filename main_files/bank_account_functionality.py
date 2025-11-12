@@ -1,4 +1,4 @@
-import json
+from json_file_handling import load_users, save_users
 
 def display_balance(user_data: dict) -> None:
     balance = user_data["balance"]
@@ -6,9 +6,7 @@ def display_balance(user_data: dict) -> None:
     
     
 def deposit(user_data: dict) -> None:
-    
-    with open("user_data.json", "r") as f:
-        users = json.load(f)
+    users = load_users()
         
     username = user_data["username"]
     
@@ -27,8 +25,8 @@ def deposit(user_data: dict) -> None:
             users[username]["balance"] += deposit_amount
             print(f"Deposit of £{deposit_amount:,.2f} succesful.\n")
             
-            with open("user_Data.json", "w") as f:
-                json.dump(users, f, indent=4)
+            save_users(users)
+            
             break
             
 
