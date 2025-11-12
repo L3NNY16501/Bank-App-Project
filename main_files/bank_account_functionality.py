@@ -15,7 +15,7 @@ def deposit(user_data: dict) -> None:
             continue
                 
         if deposit_amount <= 0:
-            print(f"Cannot deposit £{deposit_amount:,.2f}.")
+            print(f"Cannot deposit £{deposit_amount:,.2f}.\n")
             continue
         else:
             user_data["balance"] += deposit_amount
@@ -41,6 +41,6 @@ def withdraw(user_data: dict) -> None:
             continue
         
         user_data["balance"] -= withdrawal_amount
-        print(f"You have succesfully made a withdrawal of £{withdrawal_amount:,.2f}.")
+        print(f"You have succesfully made a withdrawal of £{withdrawal_amount:,.2f}.\n")
         break
                     
