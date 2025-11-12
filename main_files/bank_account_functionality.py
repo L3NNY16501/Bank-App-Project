@@ -1,16 +1,17 @@
 from json_file_handling import load_users, save_users
 
 def display_balance(user_data: dict) -> None:
-    username = user_data["username"]
+    
     users = load_users()
+    username = user_data["username"]
     
     balance = users[username]["balance"]
     print(f"Current balance: £{balance:,.2f}\n")
     
     
 def deposit(user_data: dict) -> None:
-    users = load_users()
-        
+    
+    users = load_users()    
     username = user_data["username"]
     
     while True:
@@ -34,6 +35,10 @@ def deposit(user_data: dict) -> None:
             
 
 def withdraw(user_data: dict) -> None:
+    
+    users = load_users()
+    username = user_data["username"]
+    
     while True:
         withdrawal_amount_prompt = input("Please Select a withdrawal amount: ")
         try:
@@ -42,7 +47,7 @@ def withdraw(user_data: dict) -> None:
             print("Please enter a valid number.\n")
             continue
         
-        if withdrawal_amount > user_data["balance"]:
+        if withdrawal_amount > users[username]["balance"]:
             print("Insufficient Balance.\n")
             continue
         
@@ -50,7 +55,8 @@ def withdraw(user_data: dict) -> None:
             print("Invalid Withdrawal Amount.\n")
             continue
         
-        user_data["balance"] -= withdrawal_amount
+        users[username]["balance"] -= withdrawal_amount
         print(f"You have succesfully made a withdrawal of £{withdrawal_amount:,.2f}.\n")
+        save_users(users)
         break
                     
