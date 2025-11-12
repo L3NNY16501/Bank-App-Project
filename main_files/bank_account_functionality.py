@@ -1,7 +1,6 @@
 from json_file_handling import load_users, save_users
 
 def display_balance(user_data: dict) -> None:
-    
     users = load_users()
     username = user_data["username"]
     
@@ -10,7 +9,6 @@ def display_balance(user_data: dict) -> None:
     
     
 def deposit(user_data: dict) -> None:
-    
     users = load_users()    
     username = user_data["username"]
     
@@ -35,7 +33,6 @@ def deposit(user_data: dict) -> None:
             
 
 def withdraw(user_data: dict) -> None:
-    
     users = load_users()
     username = user_data["username"]
     
