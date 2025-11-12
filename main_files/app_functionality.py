@@ -1,3 +1,4 @@
+from json_file_handling import load_users, save_users
 from bank_account_functionality import display_balance, deposit, withdraw
 import json
 
@@ -6,8 +7,7 @@ import json
 
 def login() -> dict: 
     try:
-        with open("user_data.json", "r") as f:
-            users = json.load(f)
+            users = load_users()
     except FileNotFoundError:
         print("Error: File not found!")
         return None    
