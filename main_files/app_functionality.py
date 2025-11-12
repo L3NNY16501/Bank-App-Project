@@ -23,7 +23,7 @@ def login() -> dict:
         print(f"Username: {username} not found!")
 
 
-def user_dashboard(user_data):
+def user_dashboard(user_data) -> None:
     """
     If login successful and user_data is found then user_dashboard() will display
     the available options within the banking app and prompt the user for 
