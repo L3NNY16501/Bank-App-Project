@@ -1,5 +1,5 @@
 from user_accounts import users
-from bank_account_functionality import display_balance, deposit
+from bank_account_functionality import display_balance, deposit, withdraw
 
 # Module contains functionality for app (Login, Deposit, Withdraw, View Balance)
 
@@ -59,6 +59,10 @@ def user_dashboard(user_data: dict) -> None:
         
         if selection == 2:
             deposit(user_data)
+            continue
+        
+        if selection == 3:
+            withdraw(user_data)
             continue
             
 
