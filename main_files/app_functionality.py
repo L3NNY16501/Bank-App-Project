@@ -1,10 +1,18 @@
-from user_accounts import users
 from bank_account_functionality import display_balance, deposit, withdraw
+import json
 
 # Module contains functionality for app (Login, Deposit, Withdraw, View Balance)
 
 
 def login() -> dict: 
+    try:
+        with open("user_data.json", "r") as f:
+            users = json.load(f)
+    except FileNotFoundError:
+        print("Error: File not found!")
+        return None    
+            
+    
     print("Welcome to Banking App!\n")
     username = input("Please enter your username: ").lower().strip()
     
