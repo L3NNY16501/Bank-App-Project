@@ -1,3 +1,3 @@
 users = {
-    "ryanleonard": {"password": "Ryanpass", "balance": 10000 }
+    "ryanleonard": {"username": "ryanleonard", "password": "Ryanpass", "balance": 10000 }
 }

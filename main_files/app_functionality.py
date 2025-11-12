@@ -1,5 +1,5 @@
 from user_accounts import users
-from bank_account_functionality import display_balance
+from bank_account_functionality import display_balance, deposit
 
 # Module contains functionality for app (Login, Deposit, Withdraw, View Balance)
 
@@ -29,7 +29,7 @@ def user_dashboard(user_data):
     the available options within the banking app and prompt the user for 
     their selection
     """
-    
+    print(f"Welcome {user_data["username"]}")
     print("""Please Select from the following:
           
             1) Display Balance
@@ -55,6 +55,10 @@ def user_dashboard(user_data):
         
         if selection == 1:
             display_balance(user_data)
+            continue
+        
+        if selection == 2:
+            deposit(user_data)
             continue
             
 
