@@ -1,6 +1,6 @@
 
 
-def display_balance(user_data) -> None:
+def display_balance(user_data: dict) -> None:
     balance = user_data["balance"]
     print(f"Current balance: £{balance:,.2f}\n")
     
