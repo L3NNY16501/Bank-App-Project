@@ -56,7 +56,7 @@ def user_dashboard(user_data: dict) -> None:
             if selection not in [1,2,3]:
                 print("Please select a Valid Choice.\n")
                 continue
-        except Exception as e:
+        except ValueError:
             print("Please select a Valid Choice.\n")
             continue
         
