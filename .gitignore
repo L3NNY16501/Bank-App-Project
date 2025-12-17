@@ -2,4 +2,4 @@ __pycache__/
 
 banking_app_venv/
 
-main_files/user_data.json
+user_data.json
