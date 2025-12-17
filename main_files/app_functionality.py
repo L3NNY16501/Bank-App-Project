@@ -3,6 +3,25 @@ from bank_account_functionality import display_balance, deposit, withdraw
 
 # Module contains functionality for app (Login, Deposit, Withdraw, View Balance)
 
+def display_welcome_message():
+    print("""Welcome to Leonard Bank
+    Please select a following option:
+    1) Login
+    2) Create an Account
+        """)
+    
+    
+def prompt_login_or_create_account() -> int:
+    while True:    
+        prompt = input("Selection: ")
+        try:
+            choice = int(prompt)
+        except ValueError:
+            print("Please Select a valid choice.\n")
+            continue
+        
+        return choice
+    
 
 def login() -> dict: 
     try:
@@ -11,7 +30,6 @@ def login() -> dict:
         print("Error: File not found!")
         return None    
             
-    
     print("Welcome to Banking App!\n")
     username = input("Please enter your username: ").lower().strip()
     
