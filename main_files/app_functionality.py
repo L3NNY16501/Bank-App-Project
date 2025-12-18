@@ -29,7 +29,6 @@ def login() -> dict:
         print("Error: File not found!")
         return None    
             
-    print("Welcome to Banking App!\n")
     username = input("Please enter your username: ").lower().strip()
     
     if username in users:
