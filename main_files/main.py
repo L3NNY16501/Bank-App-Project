@@ -1,9 +1,9 @@
-from app_functionality import login, user_dashboard, prompt_login_or_create_account, display_welcome_message
+from app_functionality import login, user_dashboard, prompt_login_or_create_account, create_account
 
 
 user_data = None
 
-display_welcome_message()
+print("Welcome to Leonard Bank")
 
 while True:
     choice = prompt_login_or_create_account()
@@ -14,7 +14,7 @@ while True:
     
     # Will create functionality for creating an account
     elif choice == 2:
-        pass
+        create_account()
     
     elif choice not in [1, 2]:
         print("Enter either 1 or 2\n")
