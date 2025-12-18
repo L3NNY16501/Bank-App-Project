@@ -22,12 +22,7 @@ def prompt_login_or_create_account() -> int:
         return choice
     
 
-def login() -> dict: 
-    try:
-        users = load_users()
-    except FileNotFoundError:
-        print("Error: File not found!")
-        return None    
+def login(users) -> dict: 
             
     username = input("Please enter your username: ").lower().strip()
     
@@ -39,6 +34,7 @@ def login() -> dict:
             print("Password Correct. Login Successful!\n")
             user_data = users[username]
             return user_data
+        
         else:
             print("Password Incorrect!")
             

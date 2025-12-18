@@ -1,5 +1,5 @@
 from app_functionality import login, user_dashboard, prompt_login_or_create_account, create_account
-
+from json_file_handling import load_users
 
 user_data = None
 
@@ -9,7 +9,7 @@ while True:
     choice = prompt_login_or_create_account()
     
     if choice == 1:
-        user_data = login()
+        user_data = login(load_users())
         break
     
     # Will create functionality for creating an account
